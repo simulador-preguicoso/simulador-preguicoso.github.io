@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/fixtures.css">
+    <link rel="stylesheet" href="./styles/standings.css">
+</head>
+
+<body>
+    <div id="standings">
+        <input type="checkbox" id="show-table" checked="true">
+        <label for="show-table">Mostrar tabela?</label>
+
+        <table id="standings-table">
+            <caption> Campeonato Brasileiro - Serie A </caption>
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Time</th>
+                    <th>Pontos</th>
+                    <th>Jogos</th>
+                    <th>V</th>
+                    <th>E</th>
+                    <th>D</th>
+                    <th>GA</th>
+                    <th>GC</th>
+                    <th>SG</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="fixtures">
+        <div id="pagination">
+            <button id="previous" class="round-selector">Anterior</button>
+            <span id="round">Rodada x</span>
+            <button id="next" class="round-selector">Próxima</button>
+        </div>
+
+        <table id="fixtures-table">
+            <thead>
+                <tr>
+                    <th>Casa</th>
+                    <th>x</th>
+                    <th>Fora</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./bundle.js"></script>
+</body>
+
+</html>

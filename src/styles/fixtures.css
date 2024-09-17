@@ -1,0 +1,46 @@
+#fixtures {
+    min-width: 40%;
+    align-content: center;
+    text-align: center;
+}
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+#pagination span {
+    margin: 0 15px;
+    padding: 10px 10px;
+}
+
+#fixtures-table {
+    width: 50%;
+    margin: auto;
+}
+
+#fixtures-table th {
+    height: 25px;
+}
+
+#fixtures-table td {
+    display: table-cell;
+    height: 60px;
+    width: 33%;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.team-logo {
+    max-height: 50px;
+}
+
+.ft {
+    background-color: gainsboro;
+}
+
+.result {
+    border: 2px solid green;
+}
