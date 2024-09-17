@@ -5,7 +5,7 @@ let fixtures, standings;
 let round = 1;
 
 document.addEventListener('DOMContentLoaded', async () => {
-    fixtures = await fetch('/dist/assets/fixtures.json').then(r => r.json());
+    fixtures = await fetch('./assets/fixtures.json').then(r => r.json());
 
     updateStandingsTable(fixtures);
     buildFixtureTable(fixtures);
