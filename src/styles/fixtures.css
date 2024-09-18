@@ -2,22 +2,31 @@
     min-width: 40%;
     align-content: center;
     text-align: center;
+    margin: 25px 0;
+    overflow: auto;
+}
+
+@media screen and (max-width: 600px) {
+    #fixtures {
+        width: 90%;
+    }
 }
 
 #pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 25px;
+    margin: 25px 0;
 }
 
 #pagination span {
-    margin: 0 15px;
+    margin: 0 10px;
     padding: 10px 10px;
 }
 
 #fixtures-table {
-    width: 50%;
+    overflow: auto;
+    width: 80%;
     margin: auto;
 }
 

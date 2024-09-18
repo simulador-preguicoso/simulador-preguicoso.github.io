@@ -3,4 +3,9 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+#table-options {
+    margin: 25px auto;
 }
