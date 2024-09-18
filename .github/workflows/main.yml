@@ -1,24 +1,29 @@
 name: Run Build & Deploy Every 30 Minutes
 
-on:
-  schedule:
-    - cron: "*/30 * * * *"
+on: workflow_dispatch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
       - name: Run load script
-        run: curl --request GET \
-             --url 'https://api-football-v1.p.rapidapi.com/v3/fixtures?league=71&season=2024' \
-             --header 'x-rapidapi-host:api-football-v1.p.rapidapi.com' \
-             --header 'x-rapidapi-key:${{ secrets.API_TOKEN }}' > fixtures.json
+        run: |
+          curl --request GET \
+            --url "https://api-football-v1.p.rapidapi.com/v3/fixtures?league=71&season=2024" \
+            -H "x-rapidapi-host: api-football-v1.p.rapidapi.com" \
+            -H "x-rapidapi-key: $API_TOKEN" > fixtures.json
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
       - name: Copy fixtures
         run: cp ./fixtures.json ./src/assets/fixtures.json
       - name: Install npm packages
         run: npm install
       - name: Run build script
         run: npm run build:prod
-      - name: Deploy application
+      - name: deploy
         run: npm run deploy
+
