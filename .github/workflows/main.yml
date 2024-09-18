@@ -10,7 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run load script
-        run: ./load.sh ${{ secrets.API_TOKEN }}
+        run: curl --request GET \
+             --url 'https://api-football-v1.p.rapidapi.com/v3/fixtures?league=71&season=2024' \
+             --header 'x-rapidapi-host:api-football-v1.p.rapidapi.com' \
+             --header 'x-rapidapi-key:${{ secrets.API_TOKEN }}' > fixtures.json
       - name: Copy fixtures
         run: cp ./fixtures.json ./src/assets/fixtures.json
       - name: Install npm packages
