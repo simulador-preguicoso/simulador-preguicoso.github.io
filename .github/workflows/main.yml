@@ -2,7 +2,7 @@ name: Run Build & Deploy Every 30 Minutes
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "0 */2 * * *"
 
 jobs:
   build-and-deploy:
